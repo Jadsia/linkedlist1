@@ -28,20 +28,22 @@ class LinkedListNode
   @data = nil
   end
 
-  def push(value) @data = LinkedListNode.new(value, @data)
+  def push(value)
+    @data = LinkedListNode.new(value, @data)
   end
+
    def pop
-  return print "nil\n" if @data.nil?
-  print "#{@data.value}\n"
-  @data = @data.next_node
-  end
+    return print "nil\n" if @data.nil?
+    print "#{@data.value}\n"
+    @data = @data.next_node
+    end
   end
 
   def reverse_list(list)
-  stack = Stack.new
-  while list
-  stack.push(list.value)
-  list = list.next_node
+    stack = Stack.new
+    while list
+    stack.push(list.value)
+    list = list.next_node
   end
 
   return stack.data
@@ -52,30 +54,5 @@ class LinkedListNode
  revlist = reverse_list(node3)
  print_values(revlist)
 
-
-
-
- #notes
- # Creates a new Stack object
- # stack = Stack.new
-
- # Pushes (adds) the number 1 to the empty stack
- # stack.push(1)
-
- # Pushes the number 2 to the TOP of the stack
- # stack.push(2)
-
- # Pops (removes) the TOP number from the stack (2)
- # puts stack.pop
- # => 2
-
- # Pops the remaining number from the stack (1)
- # puts stack.pop
- # => 1
-
- # Tries to pop the TOP number from the stack,
- # but it is empty so it returns nil
- # puts stack.pop
- # => nil
 
 
